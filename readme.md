@@ -45,12 +45,12 @@ public function edit()
 }
 ```
 
-The toast method accepts the optionnal arguments title and level: 
+The toast method accepts the title and level optional arguments : 
 ```php
 toast('message','level','title')
 ```
 
-There's a few quick methods to modify the toast:
+There are a few quick methods to modify the toast:
 
 - `toast('Message')->success()`: Set the toast level as "success".
 - `toast('Message')->info()`: Set the toast level as "info".
@@ -61,13 +61,13 @@ There's a few quick methods to modify the toast:
 - `toast('Message')->title("Toast title")`: Set the toast title.
 - `toast('Message')->important()`: Add a close button to the toast.
 
-## Configuration & personalisation
+## Configuration & personalization
 
-You can publish the configuration file to tweak the position of the toast and the default value for autohide.
+You can publish the configuration file to tweak the position of the toast or the default value for 'autohide'.
 ```bash
 php artisan vendor:publish --provider="WhereIsLucas\LaravelBootstrapToasts\ToastServiceProvider" --tag="config"
 ```
-You can publish the views and tweak it if you want!
+You can publish the view and tweak it if you want!
 ```bash
 php artisan vendor:publish --provider="WhereIsLucas\LaravelBootstrapToasts\ToastServiceProvider" --tag="views"
 ```

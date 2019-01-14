@@ -1,0 +1,38 @@
+{
+    "name": "whereislucas/laravel-bootstrap-toasts",
+    "description": "Bootstrap Laravel Flash Messages",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lucas Houssa",
+            "email": "lucas@retinens.be"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "~5.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "dev-master",
+        "phpunit/phpunit": "^6.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "WhereIsLucas\\LaravelBootstrapToasts": "src/"
+        },
+        "files": [
+            "src/WhereIsLucas/LaravelBootstrapToasts/functions.php"
+        ]
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "WhereIsLucas\\LaravelBootstrapToasts\\ToastServiceProvider"
+            ],
+            "aliases": {
+                "Toast": "WhereIsLucas\\LaravelBootstrapToasts\\Toast"
+            }
+        }
+    }
+}

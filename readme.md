@@ -4,21 +4,19 @@ This package, based on `laracasts/flash` provides an interface for Bootstrap 4.2
 
 ## Installation
 
-Begin by pulling in the package through Composer.
-
+Get the package with composer
 ```bash
 composer require whereislucas/laravel-bootstrap-toasts
 ```
 
-Next, if using Laravel 5, include the service provider within your `config/app.php` file.
-
+If you are not using Laravel 5.5 or higher, include the service provider within your `config/app.php` file.
 ```php
 'providers' => [
     WhereIsLucas\LaravelBootstrapToasts\Toaster::class,
 ];
 ```
 
-This package is made for Bootstrap 4.2, be sure to include the css and js files on your page.
+This package is made for Bootstrap 4.2 and higher, be sure to include the css and js files on your page.
 
 ```html
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" >
@@ -32,7 +30,12 @@ This package is made for Bootstrap 4.2, be sure to include the css and js files 
 
 ## Usage
 
-To create a toast message, call the `toast()` method in your controller.
+First of all, include the snippet in your Blade templates
+```html
+@include('laravel-bootstrap-toasts::message')
+```
+
+Then, in your controller, call the `toast()` method to create a toast message.
 
 ```php
 public function edit()
@@ -47,7 +50,7 @@ The toast method accepts the optionnal arguments title and level:
 toast('message','level','title')
 ```
 
-There's a few additional quick methods to modify the toast:
+There's a few quick methods to modify the toast:
 
 - `toast('Message')->success()`: Set the toast level as "success".
 - `toast('Message')->info()`: Set the toast level as "info".
@@ -56,11 +59,16 @@ There's a few additional quick methods to modify the toast:
 
 
 - `toast('Message')->title("Toast title")`: Set the toast title.
-- `toast('Message')->important()`: Add a close button to the flash message.
+- `toast('Message')->important()`: Add a close button to the toast.
 
-To display the toasts in your views, simply add this in your Blade templates
+## Configuration & personalisation
 
-```html
-@include('laravel-bootstrap-toasts::message')
+You can publish the configuration file to tweak the position of the toast and the default value for autohide.
+```bash
+php artisan vendor:publish --provider="WhereIsLucas\LaravelBootstrapToasts\ToastServiceProvider" --tag="config"
+```
+You can publish the views and tweak it if you want!
+```bash
+php artisan vendor:publish --provider="WhereIsLucas\LaravelBootstrapToasts\ToastServiceProvider" --tag="views"
 ```
 

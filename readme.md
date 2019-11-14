@@ -12,7 +12,7 @@ composer require whereislucas/laravel-bootstrap-toasts
 If you are not using Laravel 5.5 or higher, include the service provider within your `config/app.php` file.
 ```php
 'providers' => [
-    WhereIsLucas\LaravelBootstrapToasts\Toaster::class,
+    WhereIsLucas\LaravelBootstrapToasts\ToastServiceProvider::class,
 ];
 ```
 

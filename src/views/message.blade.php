@@ -32,7 +32,7 @@
 </div>
 
 <script>
-    $('.toast').toast().toast("show");
+    $('.toast').toast("show");
 </script>
 
 {{ session()->forget('toasts') }}
